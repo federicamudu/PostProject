@@ -3,11 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h1 class="display-1">
-                    The Post
+                    Tutti gli articoli
                 </h1>
-                @if (session('message'))
-                    {{ session('message') }}
-                @endif
             </div>
         </div>
     </div>
