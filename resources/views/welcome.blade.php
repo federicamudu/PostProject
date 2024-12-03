@@ -5,6 +5,9 @@
                 <h1 class="display-1">
                     The Post
                 </h1>
+                @if (session('message'))
+                    {{ session('message') }}
+                @endif
             </div>
         </div>
     </div>
