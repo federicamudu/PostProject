@@ -21,10 +21,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             @if (Auth::user()->is_admin)
-                                <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
                             @endif
                             @if (Auth::user()->is_revisor)
-                                <li><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard Revisor</a></li>
+                            <li><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard Revisor</a></li>
                             @endif
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
@@ -47,9 +47,11 @@
                     </li>
                     @endguest
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" role="search" action="{{route('article.search')}}" method="GET">
+                    <div class="input-group">
+                        <input type="search" class="form-control" name="query" placeholder="Cerca qui..." aria-label="Search" aria-describedby="button-addon2">
+                        <button class="btn btn-secondary" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
+                    </div>
                 </form>
             </div>
         </div>
