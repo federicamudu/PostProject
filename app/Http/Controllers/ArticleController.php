@@ -109,11 +109,12 @@ class ArticleController extends Controller implements HasMiddleware
             'subtitle' => $request->subtitle,
             'body' => $request->body,
             'category_id' => $request->category,
+            'is_accepted' => NULL,
             'slug' => Str::slug($request->title)
         ]);
 
         if($request->image){
-            Storage::delete($article->image);
+            Storage::disk('public')->delete($article->image);
             $article->update([
                 'image' => $request->file('image')->store('images', 'public')
             ]);
@@ -145,6 +146,7 @@ class ArticleController extends Controller implements HasMiddleware
         foreach($article->tags as $tag){
             $article->tags()->detach($tag);
         }
+        Storage::disk('public')->delete($article->image);
         $article->delete();
         return redirect()->back()->with('message', 'Articolo eliminato con successo!');
     }
