@@ -12,13 +12,14 @@
     </thead>
     <tbody>
         @foreach ($articles as $article)
+        <tr>
             <th scope="row">{{$article->id}}</th>
             <td>{{$article->title}}</td>
             <td>{{$article->subtitle}}</td>
             <td>{{$article->category->name ?? 'Nessuna categoria'}}</td>
             <td>
                 @foreach ($article->tags as $tag)
-                    #{{$tag->name}}
+                #{{$tag->name}}
                 @endforeach
             </td>
             <td>{{$article->created_at->format('d/m/Y')}}</td>
@@ -31,6 +32,7 @@
                     <button type="submit" class="btn btn-danger">Elimina</button>
                 </form>
             </td>
+        </tr>
         @endforeach
     </tbody>
 </table>

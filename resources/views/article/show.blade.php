@@ -25,6 +25,8 @@
                             #{{$tag->name}}
                         @endforeach
                     </p>
+                    <br>
+                    <p class="card-subtitle text-muted fst-italic small">tempo di lettura {{ $article->readDuration() }}min</p>
                     <div class="text-muted my-3">
                         <p>Redatto il {{$article->created_at->format('d/m/Y')}} da <a href="{{route('article.byUser', $article->user)}}">{{ $article->user->name}}</a></p>
                     </div>
