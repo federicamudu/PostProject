@@ -43,4 +43,32 @@
             </div>
         </div>
     </div>
+    <hr>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2>
+                    Tutti i tags
+                </h2>
+                <x-metainfo-table :metainfos="$tags" metaType="tags"></x-metainfo-table>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <h2>
+                        Tutte le categorie
+                    </h2>
+                    <form action="{{route('admin.storeCategory')}}" method="post" class="w-50 d-flex m-3">
+                        @csrf
+                        <input type="text" name="name" id="name" placeholder="Nuova categoria" class="form-control me-2">
+                        <button type="submit" class="btn btn-outline-secondary">Inserisci</button>
+                    </form>
+                </div>
+                <x-metainfo-table :metainfos="$categories" metaType="categorie"></x-metainfo-table>
+            </div>
+        </div>
+    </div>
 </x-layout>
