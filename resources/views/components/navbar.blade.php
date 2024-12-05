@@ -20,7 +20,12 @@
                             Bentornato {{ Auth::user()->name }}!
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            @if (Auth::user()->is_admin)
+                                <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
+                            @endif
+                            @if (Auth::user()->is_revisor)
+                                <li><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard Revisor</a></li>
+                            @endif
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">

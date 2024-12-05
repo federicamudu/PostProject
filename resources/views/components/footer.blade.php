@@ -49,7 +49,9 @@
             <!-- Section: Social media -->
         </div>
         <!-- Grid container -->
-
+        <div class="text-center text-dark p-3 border-black border-top border-bottom" style="background-color: rgba(0, 0, 0, 0.2);">
+            <a href="{{route('careers')}}" class="text-dark">Lavora con noi</a>
+        </div>
         <!-- Copyright -->
         <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2024 Copyright:
